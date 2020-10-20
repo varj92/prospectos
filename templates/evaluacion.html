@@ -1,5 +1,40 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h2>Evaluacion de prospecto</h2>
+<div class="col-md-12">
+    <table class="table ">
+        <thead>
+            <tr class="table-primary">
+                <td>Nombre del prospecto</td>
+                <td>Primero apellido</td>
+                <td>Segundo apellido</td>
+                <td>calle</td>
+                <td>numero</td>
+                <td>colonia</td>
+                <td>codpos</td>
+                <td>telefono</td>
+                <td>rfc</td>
+                <td>estatus</td>
+                <td>rechazo</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prospecto in prospectos %}
+            <tr>
+                <td>{{ prospecto["nombre"] }}</td>
+                <td>{{ prospecto["appaterno"] }}</td>
+                <td>{{ prospecto["apmaterno"] }}</td>
+                <td>{{ prospecto["calle"] }}</td>
+                <td>{{ prospecto["numero"] }}</td>
+                <td>{{ prospecto["colonia"] }}</td>
+                <td>{{ prospecto["codpos"] }}</td>
+                <td>{{ prospecto["telefono"] }}</td>
+                <td>{{ prospecto["rfc"] }}</td>
+                <td>{{ prospecto["estatus"] }}</td>
+                <td>{{ prospecto["rechazo"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>    
+</div>
 {% endblock %}

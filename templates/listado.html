@@ -1,5 +1,26 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h2>lista de prospectos</h2>
+<div class="col-md-12">
+    <table class="table ">
+        <thead>
+            <tr class="table-primary">
+                <td>Nombre del prospecto</td>
+                <td>Primero apellido</td>
+                <td>Segundo apellido</td>
+                <td>Estatus</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prospecto in prospectos %}
+            <tr>
+                <td>{{ prospecto["nombre"] }}</td>
+                <td>{{ prospecto["appaterno"] }}</td>
+                <td>{{ prospecto["apmaterno"] }}</td>
+                <td>{{ prospecto["estatus"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>    
+</div>
 {% endblock %}
